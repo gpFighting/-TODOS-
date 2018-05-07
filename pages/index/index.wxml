@@ -1,0 +1,22 @@
+<view class="container">
+	<view class="input">
+		<image src="../../images/plus.png" bindtap="addToTodos"></image>
+		<input type="text" placeholder="Anything here ..." value="{{ input }}" bindinput="inputTodos" bindconfirm="addToTodos" />
+	</view>
+	<block wx:if= "{{ todos.length }}"> 
+		<view class="todos">
+			<view class="item {{ item.completed ? 'completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}" bindtap="toggleState" data-index="{{ index }}">
+				<icon type="{{ item.completed ? 'success' : 'circle' }}"></icon>
+				<text>{{ item.todo }}</text>
+				<!-- 此处icon的点击会触发事件冒泡，所以使用catchtap -->
+				<icon type="clear" size="18" catchtap="removetodo" data-index="{{ index }}"></icon>
+			</view>
+		</view>
+		<view class="footer">
+			<text bindtap="toggleAll">ToggleAll</text>
+			<text wx:if="{{ lefttodo }}">{{ lefttodo }} {{ lefttodo>1? 'items' : 'item' }} left</text>
+			<text bindtap="clearAll">Clear Completed</text>
+		</view>
+	</block>
+	<view wx:else="{{ todos.length }}" class="void">nothing is here</view>
+</view>

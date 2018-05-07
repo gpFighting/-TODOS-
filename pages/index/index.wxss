@@ -1,0 +1,61 @@
+.container {
+	border-top: 5rpx solid #e0e0e0;
+	padding: 20rpx;
+	margin-top: 20rpx;
+}
+.input {
+	display: flex;
+	align-items: center;
+	border: 5rpx solid #e0e0e0;
+	box-shadow: 0 0 8rpx #ccc;
+	padding: 15rpx;
+	font-size: 30rpx;
+}
+.input input {
+	flex: 1;
+}
+.input image {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 10rpx;
+}
+.todos {
+	border: 5rpx solid #e0e0e0;
+	margin: 20rpx 0;
+}
+.todos .item {
+	display: flex;
+	align-items: center;
+	padding: 20rpx 10rpx;
+	border-bottom: 5rpx solid #e0e0e0;
+}
+.todos .item:last-child {
+	border: none;
+}
+.todos .item text {
+	flex: 1;
+	margin-left: 10rpx;
+	font-size: 30rpx;
+}
+.todos .item.completed text {
+	color: #ccc;
+	text-decoration: line-through;
+}
+.footer {
+	display: flex;
+	justify-content: space-between;
+	font-size: 30rpx;
+}
+.footer text {
+	padding: 10rpx;
+	border: 2rpx dashed red;
+	border-radius: 10rpx;
+	background-color: #eee;
+	color: blue;
+}
+.void {
+	font-size: 80rpx;
+	color: #ccc;
+	text-align: center;
+	margin-top: 200rpx;
+}
